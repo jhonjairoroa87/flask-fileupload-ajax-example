@@ -67,6 +67,12 @@ def index():
 
 @app.route('/uploadajax', methods=['POST'])
 def upldfile():
+    first_name = request.args.get('first_name')
+    last_name = request.args.get('last_name')
+
+    print first_name  # jonn
+    print last_name  # roa
+
     if request.method == 'POST':
         files = request.files['file']
         if files and allowed_file(files.filename):

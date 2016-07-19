@@ -1,10 +1,13 @@
 $(function() {
     $('#submit').click(function() {
         event.preventDefault();
+
+        var parameters = {'first_name':'jhon', 'last_name':'roa'};
+
         var form_data = new FormData($('#uploadform')[0]);
         $.ajax({
             type: 'POST',
-            url: '/uploadajax',
+            url: '/uploadajax?' + $.param(parameters),
             data: form_data,
             contentType: false,
             processData: false,
